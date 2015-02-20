@@ -116,6 +116,26 @@
             set { SetValue(UriProperty, value); }
         }
 
+		public static readonly BindableProperty DisableScrollProperty = BindableProperty.Create<HybridWebView, bool> (p => p.DisableScroll, default(bool));
+
+		public bool DisableScroll {
+			get { return (bool)GetValue (DisableScrollProperty); }
+			set { SetValue (DisableScrollProperty, value); }
+		}
+
+		/// <summary>
+		/// When a link is clicked it will open externally
+		/// </summary>
+		public static readonly BindableProperty OpenLinksExternallyProperty = BindableProperty.Create<HybridWebView, bool> (p => p.OpenLinksExternally, default(bool));
+
+		/// <summary>
+		/// When a link is clicked it will open externally
+		/// </summary>
+		public bool OpenLinksExternally {
+			get { return (bool)GetValue (OpenLinksExternallyProperty); }
+			set { SetValue (OpenLinksExternallyProperty, value); }
+		}
+			
         /// <summary>
         /// Gets or sets the source.
         /// </summary>

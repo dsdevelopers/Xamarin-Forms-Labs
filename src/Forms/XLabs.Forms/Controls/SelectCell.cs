@@ -81,7 +81,6 @@ namespace XLabs.Forms.Controls
 			DetailLocation = TextCellDetailLocation.Right;
 			this.DetailColor = Color.Gray;
 
-			BackgroundColor = Color.White;
 			this.Tapped += HandleTapped;
 		}
 
