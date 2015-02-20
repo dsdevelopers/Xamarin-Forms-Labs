@@ -75,6 +75,10 @@ namespace XLabs.Forms.Controls
 			{
 				this.Load(this.Element.Uri);
 			}
+			if (e.PropertyName == "DisableScroll") 
+			{
+				this.SetScrollEnabled (this.Element.DisableScroll);
+			}
 			else if (e.PropertyName == "Source")
 			{
 				LoadSource();
@@ -144,6 +148,8 @@ namespace XLabs.Forms.Controls
 		partial void Load(Uri uri);
 
 		partial void LoadFromContent(object sender, string contentFullName);
+
+		partial void SetScrollEnabled(bool disableScroll);
 
 		partial void LoadContent(object sender, string contentFullName);
 

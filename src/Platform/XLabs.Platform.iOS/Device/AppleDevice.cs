@@ -333,7 +333,13 @@ namespace XLabs.Platform.Device
         /// <returns>The launch operation.</returns>
         public Task<bool> LaunchUriAsync(Uri uri)
         {
-            return Task.Run(() => UIApplication.SharedApplication.OpenUrl(new NSUrl(uri.ToString())));
+			return Task.Run(() => {
+				bool returnResult = false;
+				UIApplication.SharedApplication.InvokeOnMainThread(() =>
+					returnResult = UIApplication.SharedApplication.OpenUrl(new NSUrl(uri.ToString()))
+				);
+				return returnResult;
+			});
         }
         #endregion
 
